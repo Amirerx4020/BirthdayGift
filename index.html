@@ -266,11 +266,11 @@
 </div>
 
 <div class="card">
-  <div class="step">
-    <div class="step-marker">۱</div>
+  <div class="step" id="step-one">
+    <div class="step-marker" id="step-one-marker">۱</div>
     <div class="step-body">
-      <h3>شماره موبایلت رو وارد کن</h3>
-      <p>همون شماره‌ای که باهاش می‌شناسمت.</p>
+      <h3 id="step-one-title">شماره موبایلت رو وارد کن</h3>
+      <p id="step-one-text">همون شماره‌ای که باهاش می‌شناسمت.</p>
     </div>
   </div>
 
@@ -340,6 +340,9 @@
   const reveal = document.getElementById('reveal');
   const giftCodeEl = document.getElementById('gift-code');
   const copyBtn = document.getElementById('copy-btn');
+  const stepOneMarker = document.getElementById('step-one-marker');
+  const stepOneTitle = document.getElementById('step-one-title');
+  const stepOneText = document.getElementById('step-one-text');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -356,6 +359,9 @@
       giftCodeEl.textContent = giftCode;
       reveal.classList.add('show');
       form.style.display = 'none';
+      stepOneMarker.style.display = 'none';
+  stepOneTitle.textContent = 'تولد مبارک کسرا جان از طرف غزاله و امیرحسن! 🎉';
+  stepOneText.style.display = 'none';
     } catch (err) {
       msg.textContent = 'این شماره درست نیست. دوباره چک کن.';
       msg.className = 'msg error';
